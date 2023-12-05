@@ -3,7 +3,7 @@ import openai
 import streamlit as st
 
 # Set your OpenAI Assistant ID here
-assistant_id = st.secrets["ASSISTANT_ID"]
+assistant_id = st.secrets["assistant_id"]
 
 # Initialize the OpenAI client 
 client = openai
@@ -28,7 +28,7 @@ st.set_page_config(page_title="MCB Blog Assistant", page_icon=":cookie:", layout
 st.header(":cookie: MCB Blog Assistant")
 
 #Get the OPENAI API Key
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["openai_api_key"]
 
 # Button to start the chat session
 if st.sidebar.button("Start New Chat"):
