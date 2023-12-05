@@ -1,13 +1,9 @@
 # Import necessary libraries
 import openai
 import streamlit as st
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
 
 # Set your OpenAI Assistant ID here
-assistant_id = os.getenv('ASSISTANT_ID')
+assistant_id = st.secrets["ASSISTANT_ID"]
 
 # Initialize the OpenAI client 
 client = openai
@@ -32,7 +28,7 @@ st.set_page_config(page_title="MCB Blog Assistant", page_icon=":cookie:", layout
 st.header(":cookie: MCB Blog Assistant")
 
 #Get the OPENAI API Key
-openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # Button to start the chat session
 if st.sidebar.button("Start New Chat"):
